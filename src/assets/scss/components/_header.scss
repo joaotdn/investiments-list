@@ -1,0 +1,35 @@
+#header {
+  background-image: url(assets/bg-header.jpg);
+  > div {
+    color: $white;
+    z-index: 1;
+  }
+  &:before {
+    content: '';
+    @extend .display-block;
+    @extend .position-absolute;
+    @extend .width-100;
+    @extend .height-100;
+    top: 0;
+    left: 0;
+    background-color: rgba(35,80,93,0.6);
+  }
+  @extend .bg-cover;
+  @extend .position-relative;
+  @include breakpoint(large up) {
+    height: 330px;
+    h1 {
+      font-size: 52px;
+      margin-bottom: 30px;
+    }
+    p {
+      font-size: 28px;
+    }
+  }
+  @include breakpoint(medium down) {
+    padding: 30px;
+    h1 {
+      margin-bottom: 16px;
+    }
+  }
+}
