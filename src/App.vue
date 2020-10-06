@@ -13,16 +13,16 @@
 </template>
 
 <script>
-import Header from './components/Header.vue'
-import Search from './components/Search.vue'
+import Header from "./components/Header.vue";
+import Search from "./components/Search.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     Header,
     Search
   }
-}
+};
 </script>
 
 <style lang="scss">
