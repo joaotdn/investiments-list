@@ -17,19 +17,19 @@
   @extend .bg-cover;
   @extend .position-relative;
   @include breakpoint(large up) {
-    height: 330px;
+    height: rem-calc(330);
     h1 {
-      font-size: 52px;
-      margin-bottom: 30px;
+      font-size: rem-calc(52);
+      margin-bottom: rem-calc(30);
     }
     p {
-      font-size: 28px;
+      font-size: rem-calc(28);
     }
   }
   @include breakpoint(medium down) {
-    padding: 30px;
+    padding: rem-calc(30);
     h1 {
-      margin-bottom: 16px;
+      margin-bottom: rem-calc(16);
     }
   }
 }

@@ -1,0 +1,7 @@
+#search-box {
+  [data-icon] {
+    @include vertical-center;
+    right: rem-calc(16);
+    color: $dark-gray;
+  }
+}
