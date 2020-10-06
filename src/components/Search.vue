@@ -12,7 +12,7 @@
           class="margin-bottom-0"
           placeholder="Buscar fundo por nome"
           name="search"
-          @change="onSearch"
+          @keyup="onSearch"
         />
       </div>
       <div
@@ -93,7 +93,7 @@ export default {
   },
   methods: {
     onSearch(e) {
-      this.term = e.target.value;
+      this.$emit("onSearch", e.target.value);
     },
     rangeValue(value) {
       this.totalFund = value;

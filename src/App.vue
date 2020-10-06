@@ -4,8 +4,8 @@
     <div class="grid-container">
       <div class="grid-x grid-margin-x">
         <div class="cell small-12 medium-9">
-          <Search />
-          <TableFunds :funds="investmentsList" :loading="loading" />
+          <Search @onSearch="search" />
+          <TableFunds :funds="funds" :loading="loading" />
         </div>
         <div class="cell small-12 medium-3"></div>
       </div>
@@ -29,7 +29,8 @@ export default {
     return {
       loading: true,
       error: false,
-      investmentsList: []
+      investmentsList: [],
+      funds: []
     };
   },
   created() {
@@ -39,12 +40,20 @@ export default {
       .then(data => data.json())
       .then(response => {
         this.investmentsList = response;
+        this.funds = [...this.funds, ...response];
       })
       .catch(() => {
         this.loading = false;
         this.error = true;
       })
       .finally(() => (this.loading = false));
+  },
+  methods: {
+    search(term) {
+      this.funds = this.investmentsList.filter(fund =>
+        fund.simple_name.toLowerCase().includes(term.toLowerCase())
+      );
+    }
   }
 };
 </script>

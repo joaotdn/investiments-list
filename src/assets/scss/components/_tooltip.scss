@@ -1,0 +1,47 @@
+.v-tooltip {
+  @extend .position-absolute;
+  @extend .padding-1;
+  @extend .text-left;
+  top: 100%;
+  right: 0;
+  z-index: 9;
+  width: rem-calc(250);
+  border: 1px solid $medium-gray;
+  visibility: hidden;
+  background-color: $white;
+  font-size: rem-calc(12);
+  color: $black;
+}
+
+*[data-tooltip] {
+  &:hover {
+    .v-tooltip {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.tooltip-star {
+  color: forestgreen !important;
+  margin-left: rem-calc(5);
+  @extend .position-relative;
+  &:before {
+    content: 'Fundo para Investidor Qualificado';
+    @extend .position-absolute;
+    text-align: center;
+    top: rem-calc(-45);
+    left: 0;
+    background-color: $black;
+    color: $white;
+    padding: rem-calc(10);
+    width: rem-calc(130);
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+  }
+  &:hover {
+    &:before {
+      opacity: 1;
+    }
+  }
+}
