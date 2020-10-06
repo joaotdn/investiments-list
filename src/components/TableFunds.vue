@@ -6,6 +6,11 @@
           class="grid-x grid-padding-x fund-line"
           @click="expandFund(fund.fund_manager.id)"
           :data-section="fund.fund_manager.id"
+          :style="
+            `border-color: ${
+              colors[fund.specification.fund_risk_profile.score_range_order]
+            }`
+          "
         >
           <div class="cell auto">
             <p>{{ fund.simple_name }}</p>
@@ -29,8 +34,11 @@
 </template>
 
 <script>
+import ColorsMixins from "../mixins/ColorsMixins";
+
 export default {
   name: "TableFunds",
+  mixins: [ColorsMixins],
   props: {
     funds: {
       type: Array,
