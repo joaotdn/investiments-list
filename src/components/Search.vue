@@ -97,12 +97,15 @@ export default {
     },
     rangeValue(value) {
       this.totalFund = value;
+      this.$emit("onRange", value);
     },
     rangeDays(days) {
       this.totalDays = days;
+      this.$emit("onRangeDays", days);
     },
     rangeProfile(value) {
       this.totalRisk = value;
+      this.$emit("onRangeProfile", value);
     }
   }
 };

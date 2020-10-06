@@ -17,7 +17,7 @@
   }
   span {
     font-size: rem-calc(11);
-    color: $medium-gray;
+    color: $dark-gray;
   }
 }
 
@@ -35,4 +35,8 @@
   &:hover {
     opacity: 1;
   }
+}
+
+.strategy-name {
+  font-size: rem-calc(14);
 }
