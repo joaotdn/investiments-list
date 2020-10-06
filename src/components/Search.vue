@@ -48,8 +48,8 @@
                 <div class="grid-x align-middle">
                   <div class="cell small-12 text-center">
                     <SlideProfile
-                      :min="0"
-                      :max="30"
+                      :min="1"
+                      :max="11"
                       :step="1"
                       @onRange="rangeProfile"
                     />

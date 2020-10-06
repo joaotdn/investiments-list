@@ -23,8 +23,11 @@
 </template>
 
 <script>
+import ColorsMixins from "../mixins/ColorsMixins";
+
 export default {
   name: "SlideProfile",
+  mixins: [ColorsMixins],
   props: {
     step: {
       type: Number,
@@ -38,24 +41,6 @@ export default {
       type: Number,
       default: 1
     }
-  },
-  data() {
-    return {
-      colors: [
-        "#bcebfb",
-        "#9ef1dd",
-        "#b0ec76",
-        "#c5f447",
-        "#e3f43b",
-        "#f7f03b",
-        "#f5db33",
-        "#eeba2b",
-        "#e48720",
-        "#df5e16",
-        "#db0e00",
-        "#9b1b1b"
-      ]
-    };
   },
   methods: {
     changeProfile(e) {

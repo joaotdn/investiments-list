@@ -1,0 +1,29 @@
+.fund-line {
+  border-left: 5px solid lightgray;
+  cursor: pointer;
+  @extend .padding-top-1;
+  @extend .padding-bottom-1;
+
+  &:hover, &.active {
+    background-color: $light-blue;
+  }
+
+  p, span {
+    line-height: 1;
+  }
+  p {
+    font-size: rem-calc(13);
+    @extend .margin-bottom-0;
+  }
+  span {
+    font-size: rem-calc(11);
+    color: $medium-gray;
+  }
+}
+
+.fund-info {
+  display: none;
+  &.show {
+    display: block;
+  }
+}
