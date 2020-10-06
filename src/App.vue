@@ -88,16 +88,18 @@ export default {
       );
     },
     categorize() {
-      let categories = this.funds.map(
-        fund => fund.specification.fund_main_strategy.name
-      );
-      categories = [...new Set(categories)];
-      this.funds = categories.map(cat => ({
-        title: cat,
-        funds: this.funds.filter(
-          f => f.specification.fund_main_strategy.name === cat
-        )
-      }));
+      if (this.funds.length) {
+        let categories = this.funds.map(
+          fund => fund.specification.fund_main_strategy.name
+        );
+        categories = [...new Set(categories)];
+        this.funds = categories.map(cat => ({
+          title: cat,
+          funds: this.funds.filter(
+            f => f.specification.fund_main_strategy.name === cat
+          )
+        }));
+      }
     }
   }
 };

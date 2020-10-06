@@ -131,9 +131,6 @@ export default {
       return Array.prototype.slice.call(infos);
     }
   },
-  created() {
-    console.log(this.funds);
-  },
   methods: {
     expandFund(id) {
       document
