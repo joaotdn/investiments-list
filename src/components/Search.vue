@@ -22,7 +22,7 @@
           <div class="grid-x grid-padding-x full">
             <div class="cell small-12 medium-4">
               <h5>Aplicação mínima</h5>
-              <div class="filter-control width-100 align-middle">
+              <div class="filter-control width-100">
                 <SlideRange
                   :min="0"
                   :max="20000"
@@ -44,11 +44,34 @@
             </div>
             <div class="cell small-12 medium-4">
               <h5>Perfil de risco do fundo</h5>
-              <div class="filter-control width-100"></div>
+              <div class="width-100">
+                <div class="grid-x align-middle filter-control">
+                  <div class="cell small-12 text-center">
+                    <SlideProfile
+                      :min="0"
+                      :max="30"
+                      :step="1"
+                      @onRange="rangeProfile"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="cell small-12 medium-4">
               <h5>Prazo de resgate</h5>
-              <div class="filter-control width-100"></div>
+              <div class="filter-control width-100">
+                <div class="filter-control width-100">
+                  <SlideRange
+                    :min="0"
+                    :max="30"
+                    :step="1"
+                    @onRange="rangeDays"
+                  />
+                  <p>
+                    <strong>Até {{ totalDays }} dias úteis</strong>
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -59,16 +82,20 @@
 
 <script>
 import SlideRange from "./SlideRange";
+import SlideProfile from "./SlideProfile";
 
 export default {
   name: "Search",
   components: {
-    SlideRange
+    SlideRange,
+    SlideProfile
   },
   data() {
     return {
       term: "",
-      totalFund: 0
+      totalFund: 0,
+      totalDays: 0,
+      totalRisk: 0
     };
   },
   methods: {
@@ -77,6 +104,12 @@ export default {
     },
     rangeValue(value) {
       this.totalFund = value;
+    },
+    rangeDays(days) {
+      this.totalDays = days;
+    },
+    rangeProfile(value) {
+      this.totalRisk = value;
     }
   }
 };
