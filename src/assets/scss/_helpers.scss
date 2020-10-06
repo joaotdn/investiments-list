@@ -8,6 +8,14 @@
   background-attachment: fixed;
 }
 
-.font-serif { 
+.font-serif {
   font-family: $font-serif-family;
+}
+
+.bg-white {
+  background-color: $white;
+}
+
+.bg-light-gray {
+  background-color: $light-gray;
 }
