@@ -20,9 +20,9 @@
       >
         <div class="width-100 bg-light-gray radius search-filters padding-1">
           <div class="grid-x grid-padding-x full">
-            <div class="cell small-12 medium-4">
+            <div class="cell small-12 medium-4 filter-control ">
               <h5>Aplicação mínima</h5>
-              <div class="filter-control width-100">
+              <div class="width-100">
                 <SlideRange
                   :min="0"
                   :max="20000"
@@ -42,10 +42,10 @@
                 </p>
               </div>
             </div>
-            <div class="cell small-12 medium-4">
+            <div class="cell small-12 medium-4 filter-control">
               <h5>Perfil de risco do fundo</h5>
               <div class="width-100">
-                <div class="grid-x align-middle filter-control">
+                <div class="grid-x align-middle">
                   <div class="cell small-12 text-center">
                     <SlideProfile
                       :min="0"
@@ -57,20 +57,13 @@
                 </div>
               </div>
             </div>
-            <div class="cell small-12 medium-4">
+            <div class="cell small-12 medium-4 filter-control">
               <h5>Prazo de resgate</h5>
-              <div class="filter-control width-100">
-                <div class="filter-control width-100">
-                  <SlideRange
-                    :min="0"
-                    :max="30"
-                    :step="1"
-                    @onRange="rangeDays"
-                  />
-                  <p>
-                    <strong>Até {{ totalDays }} dias úteis</strong>
-                  </p>
-                </div>
+              <div class="width-100">
+                <SlideRange :min="0" :max="30" :step="1" @onRange="rangeDays" />
+                <p>
+                  <strong>Até {{ totalDays }} dias úteis</strong>
+                </p>
               </div>
             </div>
           </div>

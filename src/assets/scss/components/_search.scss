@@ -17,3 +17,11 @@
     margin-top: rem-calc(10);
   }
 }
+
+.filter-control {
+  @include breakpoint(small only) {
+    &:not(:last-child) {
+      margin-bottom: rem-calc(30);
+    }
+  }
+}
