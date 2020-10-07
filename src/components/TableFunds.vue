@@ -133,12 +133,28 @@
           <div class="fund-info width-100" :data-info="fund.id">
             <div class="grid-x grid-padding-x">
               <div class="cell small-6 show-for-medium"></div>
-              <div class="cell small-12 medium-6 fund-specifications margin-top-1">
-                <p><strong>Cotização da aplicação</strong>: {{ fund.operability.application_quotation_days_str }}</p>
-                <p><strong>Cotização do resgate</strong>: {{ fund.operability.retrieval_quotation_days_str }}</p>
-                <p><strong>Liquidação do resgate</strong>: {{ fund.operability.retrieval_liquidation_days_str }}</p>
-                <p class="margin-bottom-2"><strong>Taxa de administração</strong>: {{ fund.fees.administration_fee }}</p>
-                <p class="text-underline margin-bottom-3">Conheça mais informações sobre este fundo</p>
+              <div
+                class="cell small-12 medium-6 fund-specifications margin-top-1"
+              >
+                <p>
+                  <strong>Cotização da aplicação</strong>:
+                  {{ fund.operability.application_quotation_days_str }}
+                </p>
+                <p>
+                  <strong>Cotização do resgate</strong>:
+                  {{ fund.operability.retrieval_quotation_days_str }}
+                </p>
+                <p>
+                  <strong>Liquidação do resgate</strong>:
+                  {{ fund.operability.retrieval_liquidation_days_str }}
+                </p>
+                <p class="margin-bottom-2">
+                  <strong>Taxa de administração</strong>:
+                  {{ fund.fees.administration_fee }}
+                </p>
+                <p class="text-underline margin-bottom-3">
+                  Conheça mais informações sobre este fundo
+                </p>
                 <p><strong>CNPJ do fundo</strong>: {{ fund.cnpj }}</p>
               </div>
             </div>
