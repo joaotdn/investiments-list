@@ -92,8 +92,8 @@ export default {
     };
   },
   methods: {
-    onSearch(e) {
-      this.$emit("onSearch", e.target.value);
+    onSearch() {
+      this.$emit("onSearch", this.term);
     },
     rangeValue(value) {
       this.totalFund = value;

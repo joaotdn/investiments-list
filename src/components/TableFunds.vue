@@ -186,20 +186,15 @@ export default {
       default: true
     }
   },
-  computed: {
-    infos() {
-      let infos = document.querySelectorAll(".fund-info");
-      return Array.prototype.slice.call(infos);
-    }
-  },
   methods: {
     expandFund(id) {
+      const infos = Array.prototype.slice.call(
+        document.querySelectorAll(".fund-info")
+      );
       document
         .querySelector(`[data-section="${id}"]`)
         .classList.toggle("active");
-      const panel = this.infos.find(
-        info => info.dataset.info === id.toString()
-      );
+      const panel = infos.find(info => info.dataset.info === id.toString());
       panel.classList.toggle("show");
     }
   }
