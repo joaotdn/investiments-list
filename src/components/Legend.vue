@@ -40,7 +40,8 @@ export default {
 [data-icon="star"] {
   color: forestgreen;
 }
-[data-icon="check-circle"], [data-icon="ban"] {
+[data-icon="check-circle"],
+[data-icon="ban"] {
   color: gray;
 }
 [data-icon="reply"] {
