@@ -11,8 +11,11 @@
             @onRangeProfile="rangeProfile"
           />
           <TableFunds :items="funds" :loading="loading" />
+          <Legend />
         </div>
-        <div class="cell small-12 medium-3"></div>
+        <div class="cell small-12 medium-3">
+          <FiltersCheckbox />
+        </div>
       </div>
     </div>
   </div>
@@ -22,13 +25,17 @@
 import Header from "./components/Header.vue";
 import Search from "./components/Search.vue";
 import TableFunds from "./components/TableFunds";
+import FiltersCheckbox from "./components/FiltersCheckbox";
+import Legend from "./components/Legend";
 
 export default {
   name: "App",
   components: {
     Header,
     Search,
-    TableFunds
+    TableFunds,
+    FiltersCheckbox,
+    Legend
   },
   data() {
     return {
