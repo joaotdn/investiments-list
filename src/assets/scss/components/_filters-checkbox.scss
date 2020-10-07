@@ -1,0 +1,10 @@
+#sidebar {
+  font-size: rem-calc(14);
+  header {
+    @extend .padding-1;
+    background-color: $medium-gray;
+  }
+  label {
+    cursor: pointer;
+  }
+}
