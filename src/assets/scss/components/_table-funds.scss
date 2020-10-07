@@ -19,6 +19,12 @@
     font-size: rem-calc(11);
     color: $dark-gray;
   }
+
+  .medium-text-center {
+    @include breakpoint(small only) {
+      margin-bottom: rem-calc(10);
+    }
+  }
 }
 
 .fund-info {
@@ -39,4 +45,23 @@
 
 .strategy-name {
   font-size: rem-calc(14);
+}
+
+.table-header {
+  border: none;
+  font-size: rem-calc(12);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.fund-title {
+  @include breakpoint(small only) {
+    margin-bottom: rem-calc(10);
+  }
+}
+
+.fund-specifications {
+  p {
+    font-size: rem-calc(12);
+  }
 }

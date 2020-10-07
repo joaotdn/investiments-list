@@ -38,11 +38,6 @@ export default {
       funds: []
     };
   },
-  watch: {
-    funds() {
-      this.categorize();
-    }
-  },
   created() {
     fetch(
       "https://s3.amazonaws.com/orama-media/json/fund_detail_full.json?limit=1000&offset=0&serializer=fund_detail_full"
@@ -58,6 +53,7 @@ export default {
       })
       .finally(() => {
         this.loading = false;
+        this.categorize();
       });
   },
   methods: {
@@ -65,6 +61,7 @@ export default {
       this.funds = this.investmentsList.filter(fund =>
         fund.simple_name.toLowerCase().includes(term.toLowerCase())
       );
+      this.categorize();
     },
     range(value) {
       this.funds = this.investmentsList.filter(
@@ -72,6 +69,7 @@ export default {
           parseFloat(fund.operability.minimum_initial_application_amount) <=
           parseFloat(value)
       );
+      this.categorize();
     },
     rangeDays(value) {
       this.funds = this.investmentsList.filter(
@@ -79,6 +77,7 @@ export default {
           parseFloat(fund.operability.retrieval_quotation_days) <=
           parseFloat(value)
       );
+      this.categorize();
     },
     rangeProfile(value) {
       this.funds = this.investmentsList.filter(
@@ -86,6 +85,7 @@ export default {
           parseInt(fund.specification.fund_risk_profile.score_range_order) ===
           parseInt(value)
       );
+      this.categorize();
     },
     categorize() {
       if (this.funds.length) {

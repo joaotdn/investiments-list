@@ -1,3 +1,9 @@
+body, html {
+  @include breakpoint(small only) {
+    overflow-x: hidden;
+  }
+}
+
 .bg-cover {
   background-size: cover;
   background-position: center center;
